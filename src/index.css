@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* App base styles */
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root,
+#app {
+  height: 100%;
+}
+
+/* Apple-inspired minimal aesthetics */
+@layer base {
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[#f5f5f7] text-neutral-900;
+    background-image: radial-gradient(1000px 800px at 90% -10%, #c7d2fe20 0%, transparent 50%),
+      radial-gradient(1200px 900px at -10% -20%, #ddd6fe20 0%, transparent 50%),
+      linear-gradient(180deg, #ffffff, #f5f5f7 40%, #f5f5f7 100%);
+    background-attachment: fixed;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+@layer components {
+  /* replaced glass with inline classes where used */
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white transition;
+    background-image: linear-gradient(180deg, #000000, #1c1c1f);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium border border-black/10 hover:bg-black/5 transition;
+  }
+
+  .card {
+    @apply bg-white/60 backdrop-blur-xl border border-black/5 shadow-sm rounded-2xl p-6;
+  }
+
+  .section {
+    @apply max-w-6xl mx-auto px-4;
+  }
+}
